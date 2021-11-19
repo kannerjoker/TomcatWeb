@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>downloadPictures</title>
+</head>
+<body>
+    <a href="javascript:void(0)" id="pic1">picture1</a>
+    <a href="javascript:void(0)" id="pic2">picture2</a>
+    <script>
+        var pic1 = document.getElementById("pic1");
+        pic1.onclick = function(){
+            this.setAttribute("href","http://localhost:8080/local/demoDownloadFiles?filename=1.jpg");
+        }
+        var pic2 = document.getElementById("pic2");
+        pic2.onclick = function(){
+            this.setAttribute("href","http://localhost:8080/local/demoDownloadFiles?filename=2.jpg");
+        }
+    </script>
+</body>
+</html>

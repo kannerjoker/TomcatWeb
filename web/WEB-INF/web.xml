@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+    <!-- DemoServlet -->
+    <servlet>
+        <servlet-name>demo</servlet-name>
+        <servlet-class>DemoServlet</servlet-class>
+        <!--
+            load-on-startup 为0或正时,服务器启动创建;为负数时,第一次访问时创建
+        -->
+        <load-on-startup>-5</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demo</servlet-name>
+        <!-- 设置路径(相对于index) -->
+        <url-pattern>/new/demo</url-pattern>
+    </servlet-mapping>
+    <!-- servletSeries/DemoServlet -->
+    <servlet>
+        <servlet-name>demoServlet</servlet-name>
+        <servlet-class>servletSeries.Demo_Servlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demoServlet</servlet-name>
+        <url-pattern>/servletSeries/Demo_Servlet</url-pattern>
+    </servlet-mapping>
+    <!-- servletSeries/DemoGenericServlet -->
+    <servlet>
+        <servlet-name>demoGenericServlet</servlet-name>
+        <servlet-class>servletSeries.Demo_GenericServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demoGenericServlet</servlet-name>
+        <url-pattern>/servletSeries/Demo_GenericServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>demoResponse</servlet-name>
+        <servlet-class>DemoResponse</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>demoResponse</servlet-name>
+        <url-pattern>/demoResponse</url-pattern>
+    </servlet-mapping>
+
+    <context-param>
+        <param-name>wangwu</param-name>
+        <param-value>56789</param-value>
+    </context-param>
+</web-app>
